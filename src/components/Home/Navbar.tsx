@@ -101,12 +101,12 @@ function Navbar() {
     </div>
 
 
-    <div className='h-[100vh] w-[100vh]'>
+    <div className='h-[100vh] w-[100%]'>
 
     <img className='absolute top-0 w-full h-full' src="/assets/AI.jpg" alt="" />
     </div>
 
-    <div className='h-[100vh] w-[100vh]'></div>
+    <div className='h-[100vh] w-[100%]'></div>
 
 
 

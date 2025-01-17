@@ -3,7 +3,7 @@ import { datacontext } from '../../context/UserContext';
 import { DayAndNightToggle } from 'react-day-and-night-toggle';
 
 function Navbar() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const scaleVoiceAssistant = () => {
     const assistant = document.querySelector('#voice-assistant');
@@ -27,23 +27,27 @@ function Navbar() {
   useEffect(() => {
     const body = document.body;
     if (isDarkMode) {
-      body.style.backgroundColor = '#1e1e1e'; 
+      body.style.backgroundColor = '#000000'; 
       body.style.color = '#fff'; 
     } else {
-      body.style.backgroundColor = '#fff'; 
+      body.style.backgroundColor = '#FBFAF5'; 
       body.style.color = '#000'; 
     }
   }, [isDarkMode]);
 
   return (
-    <div className={`${isDarkMode ? 'bg-slate-300' : 'bg-orange-300'} w-full justify-center bg-orange-300 h-[100px] flex flex-col gap-[10px]`}>
-      <div className="flex items-center justify-between px-[20px]">
-        <div className="flex items-center">
-          <img className="w-[30px] h-[30px]" src="" alt="logo" />
-          <div className="text-[20px] font-extrabold">Hackoholics</div>
+    <div>
+    <div className={`${isDarkMode ? 'bg-[#00000050]' : 'bg-[#FFFFFF10]'} bg-[#063852] w-full justify-cente py-[20px] flex flex-col gap-[12px] z-10 fixed backdrop-blur-[2px]`}>
+      <div className="flex lg:flex-nowrap flex-wrap gap-y-[12px] items-center gap-[20px] px-[20px]">
+        <div className="flex items-center gap-[10px]">
+            <div className=' flex items-center w-full h-[60px]'>
+                <img className="w-full h-[150px] object-cover" src="/assets/HackoHolics_2.png" alt="logo" />
+            </div>
+          
+          <div className="text-[20px] font-extrabold"></div>
         </div>
 
-        <div className="flex items-center gap-[10px]">
+        <div className="flex items-center lg:justify-center w-full gap-[16px]">
           <div>
             <div
               className="flex items-center w-[40px] h-[40px] rounded-full cursor-pointer"
@@ -58,12 +62,12 @@ function Navbar() {
             </div>
           </div>
 
-          <form className="group relative w-[500px]">
+          <form className="group relative lg:w-[40%] w-[100%]">
             <svg
               width="20"
               height="20"
               fill="currentColor"
-              className="absolute left-3 top-1/2 -mt-2.5 pointer-events-none group-focus-within:text-emerald-500"
+              className="absolute left-3 top-1/2 -mt-2.5 pointer-events-none group-focus-within:text-[#0077B6] text-[#3b3b3b]"
               aria-hidden="true"
             >
               <path
@@ -73,26 +77,39 @@ function Navbar() {
               />
             </svg>
             <input
-              className="focus:ring-1 focus:ring-emerald-400 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-full py-2 pl-10 ring-1 ring-slate-200 shadow-sm"
+              className="focus:ring-1 focus:ring-[#0077B6] focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-full py-2 pl-10 ring-1 ring-slate-200 shadow-sm"
               type="text"
               aria-label="Search"
               placeholder="Search..."
             />
           </form>
         </div>
+      </div>
 
+      <div className="px-[20px] flex justify-between">
         <div>
+            adadadad
+        </div> 
+      <div>
           <DayAndNightToggle
             onChange={() => setIsDarkMode(!isDarkMode)}
             checked={isDarkMode}
             style={{ transition: 'all 0.2s ease' }}
           />
         </div>
-      </div>
+        </div>
+    </div>
 
-      <div className="px-[20px]">
-        adadadad 
-      </div>
+
+    <div className='h-[100vh] w-[100vh]'>
+
+    <img className='absolute top-0 w-full h-full' src="/assets/AI.jpg" alt="" />
+    </div>
+
+    <div className='h-[100vh] w-[100vh]'></div>
+
+
+
     </div>
   );
 }

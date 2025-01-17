@@ -1,53 +1,48 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext } from 'react'
 import run from '../gemini';
+export const datacontext=createContext()
 
-export const datacontext = createContext();
+ function UserContext({children}) {
 
-function UserContext({ children }) {
-  function speak(text) {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.volume = 1;
-    utterance.rate = 1;
-    utterance.pitch = 1;
-    utterance.lang = 'en-GB';
-    window.speechSynthesis.speak(utterance);
+  function speak(text){
+
+    let text_spek = new SpeechSynthesisUtterance(text)
+    text_spek.volume=1;
+    text_spek.rate=1;
+    text_spek.pitch=1;
+    text_spek.lang="en-GBp"
+    window.speechSynthesis.speak(text_spek)
+  }
+  async function aires(promt){
+    document.querySelector('#voice-assistant').style.cssText = 'transform: scale(1); transition: .5s ease-in-out';
+    let txt = await run(promt)
+    speak(txt)
+  }
+  let speechrecognition=window.speechrecognition || window.webkitSpeechRecognition
+  let recogni=new speechrecognition()
+  recogni.onresult=(e)=>{
+    let currunt =e.resultIndex
+    let trans = e.results[currunt][0].transcript
+
+    if(trans == 'open Google'){
+      window.location = "www.google.com"
+     }else{
+       aires(trans)
+     }
+  
   }
 
-  async function handleCommand(command) {
-    document.querySelector('#voice-assistant').style.transform = 'scale(1)';
-    document.querySelector('#voice-assistant').style.transition = '0.5s ease-in-out';
-
-    let response = await run(command);
-    speak(response);
-  }
-
-  const speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const recognizer = new speechRecognition();
-
-  recognizer.onresult = (e) => {
-    const command = e.results[e.resultIndex][0].transcript.trim().toLowerCase();
-
-    if (command === 'open google') {
-      window.location.href = 'https://www.google.com';
-    } else {
-      handleCommand(command);
-    }
+  let value = {
+  //  speak
+  recogni
   };
-
-  const startListening = () => {
-    recognizer.start();
-  };
-
-  const value = {
-    recogni: recognizer,
-    startListening,
-  };
-
   return (
-    <datacontext.Provider value={value}>
-      {children}
-    </datacontext.Provider>
-  );
-}
+    <div>
+      <datacontext.Provider value={value}>
+                {children}
+      </datacontext.Provider>
 
-export default UserContext;
+    </div>
+  )
+}
+export default UserContext

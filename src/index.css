@@ -14,7 +14,7 @@
   box-shadow: 0 0 20px 10px rgb(255, 233, 183), 0 0 40px 30px rgb(255, 219, 140), 0 0 90px 50px rgb(255, 209, 109);
   
   /* Reduced transition duration to 200ms */
-  transition: left 1000ms ease, transform 200ms ease, width 200ms ease, height 200ms ease, box-shadow 200ms ease, background-color 200ms ease 0.2s !important; 
+  transition: left 800ms ease, transform 200ms ease, width 200ms ease, height 200ms ease, box-shadow 200ms ease, background-color 200ms ease 0.2s !important; 
   
   z-index: 1;
 }

@@ -37,7 +37,7 @@ function Navbar() {
 
   return (
     <div>
-    <div className={`${isDarkMode ? 'bg-[#00000050]' : 'bg-[#FFFFFF10]'} bg-[#063852] w-full justify-cente py-[20px] flex flex-col gap-[12px] z-10 fixed backdrop-blur-[2px]`}>
+    <div className={`${isDarkMode ? 'bg-[#00000050]' : 'bg-[#FFFFFF10]'} w-full justify-cente py-[20px] flex flex-col gap-[20px] z-10 fixed backdrop-blur-[2px]`}>
       <div className="flex lg:flex-nowrap flex-wrap gap-y-[12px] items-center gap-[20px] px-[20px]">
         <div className="flex items-center gap-[10px]">
             <div className=' flex items-center w-full h-[60px]'>
@@ -47,21 +47,7 @@ function Navbar() {
           <div className="text-[20px] font-extrabold"></div>
         </div>
 
-        <div className="flex items-center lg:justify-center w-full gap-[16px]">
-          <div>
-            <div
-              className="flex items-center w-[40px] h-[40px] rounded-full cursor-pointer"
-              id="voice-assistant"
-              onClick={handleVoiceAssistant}
-            >
-              <img
-                className="w-[80px] h-[80px] object-cover rounded-full"
-                src="/assets/Siri-unscreen.gif"
-                alt="Voice Assistant"
-              />
-            </div>
-          </div>
-
+        <div className="flex lg:absolute items-center lg:justify-center w-full gap-[16px]">
           <form className="group relative lg:w-[40%] w-[100%]">
             <svg
               width="20"
@@ -108,6 +94,20 @@ function Navbar() {
 
     <div className='h-[100vh] w-[100%]'></div>
 
+      <div className='fixed flex flex-col items-center gap-[10px] lg:bottom-[50px] lg:right-[50px] bottom-[10px] right-[10px]'>
+        <div className={`font-semibold py-[4px] px-[8px] rounded-[4px] ${!isDarkMode ? 'bg-[#00000050]' : 'bg-[#FFFFFF10]'}`}>How can i help?</div>
+        <button
+          className="flex items-center w-[80px] h-[80px] rounded-full cursor-pointer"
+          id="voice-assistant"
+          onClick={handleVoiceAssistant}
+        >
+          <img
+            className="w-[120px] h-[120px] object-cover rounded-full"
+            src="/assets/Siri-unscreen.gif"
+            alt="Voice Assistant"
+          />
+        </button>
+      </div>
 
 
     </div>

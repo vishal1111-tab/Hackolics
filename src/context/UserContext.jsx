@@ -41,7 +41,6 @@ export const datacontext=createContext()
       <datacontext.Provider value={value}>
                 {children}
       </datacontext.Provider>
-
     </div>
   )
 }

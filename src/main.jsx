@@ -9,5 +9,6 @@ createRoot(document.getElementById('root')).render(
   <UserContext>
     <App />
     <Navbar />
+    <div className='h-[100vh]'></div>
   </UserContext>,
 )

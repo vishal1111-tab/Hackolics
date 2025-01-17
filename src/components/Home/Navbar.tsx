@@ -36,7 +36,7 @@ function Navbar() {
   }, [isDarkMode]);
 
   return (
-    <div>
+    <div className={`relative !bg-no-repeat !bg-cover bg-center h-[100vh] transition-[ease-in-out] ${isDarkMode ? ' bg-[url("/assets/Background.gif")]' : 'bg-[url("/assets/white_background.gif")]'}`}>
     <div className={`${isDarkMode ? 'bg-[#00000050]' : 'bg-[#FFFFFF10]'} w-full justify-cente py-[20px] flex flex-col gap-[20px] z-10 fixed backdrop-blur-[2px]`}>
       <div className="flex lg:flex-nowrap flex-wrap gap-y-[12px] items-center gap-[20px] px-[20px]">
         <div className="flex items-center gap-[10px]">
@@ -74,7 +74,7 @@ function Navbar() {
 
       <div className="px-[20px] flex justify-between">
         <div>
-            adadadad
+            Home
         </div> 
       <div>
           <DayAndNightToggle
@@ -86,13 +86,20 @@ function Navbar() {
         </div>
     </div>
 
-
-    <div className='h-[100vh] w-[100%]'>
-
-    <img className='absolute top-0 w-full h-full' src="/assets/AI.jpg" alt="" />
+    <div className='px-[40px] h-[100%] lg:w-[50%] w-[100%] relative lg:top-0 top-[224px] flex flex-col lg:justify-center lg:left-[50%] justify-start'>
+      <div className='lg:text-[72px] text-[54px] font-extrabold top-[240px]'>
+          Hi How Are You?
+      </div>
+      <div className='lg:text-[36px] text-[24px] font-light'>
+          Nice to Meet You!!!!!
+      </div>
     </div>
 
-    <div className='h-[100vh] w-[100%]'></div>
+
+    <div className='absolute flex items-center px-[20px] bottom-[50px] lg:bottom-[25%] h-[50vh] lg:w-[40vw] w-[100vw] transition-[smooth]'>
+      <img className={`w-full lg:h-[50vh] h-[30vh] rounded-full ${isDarkMode ? 'border-white' : 'border-black'} object-cover border-[2px] overflow-visible`} src="/assets/robot.png" alt="" />
+    </div>
+ 
 
       <div className='fixed flex flex-col items-center gap-[10px] lg:bottom-[50px] lg:right-[50px] bottom-[10px] right-[10px]'>
         <div className={`font-semibold py-[4px] px-[8px] rounded-[4px] ${!isDarkMode ? 'bg-[#00000050]' : 'bg-[#FFFFFF10]'}`}>How can i help?</div>
@@ -108,8 +115,6 @@ function Navbar() {
           />
         </button>
       </div>
-
-
     </div>
   );
 }

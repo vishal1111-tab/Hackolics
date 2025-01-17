@@ -1,15 +1,13 @@
 import React, { useContext } from 'react'
-import  { datacontext } from './context/usercontext'
+import Navbar from './components/Home/Navbar'
+
+
  function App() {
-    let {recogni}=useContext(datacontext);
+
 
   return (
     <div>
-        {/* <img src='/vite.svg'/> */}
-        <button onClick={()=>{
-            recogni.start()
-        }}></button>
-
+      
     </div>
   )
 }

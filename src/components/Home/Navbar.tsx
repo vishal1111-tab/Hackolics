@@ -102,7 +102,7 @@ function Navbar() {
  
 
       <div className='fixed flex flex-col items-center gap-[10px] lg:bottom-[50px] lg:right-[50px] bottom-[10px] right-[10px]'>
-        <div className={`font-semibold py-[4px] px-[8px] rounded-[4px] ${!isDarkMode ? 'bg-[#00000050]' : 'bg-[#FFFFFF10]'}`}>How can i help?</div>
+        <div className={`font-semibold py-[4px] px-[8px] rounded-[4px] ${!isDarkMode ? 'bg-[#00000020]' : 'bg-[#FFFFFF10]'}`}>How can i help?</div>
         <button
           className="flex items-center w-[80px] h-[80px] rounded-full cursor-pointer"
           id="voice-assistant"

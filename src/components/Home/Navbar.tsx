@@ -36,7 +36,7 @@ function Navbar() {
   }, [isDarkMode]);
 
   return (
-    <div className={`relative !bg-no-repeat !bg-cover bg-center h-[100vh] transition-[ease-in-out] ${isDarkMode ? ' bg-[url("/assets/Background.gif")]' : 'bg-[url("/assets/white_background.gif")]'}`}>
+    <div className={`relative !bg-no-repeat !bg-cover bg-center h-[100vh] transition-[ease-in-out] ${isDarkMode ? ' bg-[url("/assets/Black_Background.gif")]' : 'bg-[url("/assets/white_background.gif")]'}`}>
     <div className={`${isDarkMode ? 'bg-[#00000050]' : 'bg-[#FFFFFF10]'} w-full justify-cente py-[20px] flex flex-col gap-[20px] z-10 fixed backdrop-blur-[2px]`}>
       <div className="flex lg:flex-nowrap flex-wrap gap-y-[12px] items-center gap-[20px] px-[20px]">
         <div className="flex items-center gap-[10px]">

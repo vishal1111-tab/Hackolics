@@ -14,6 +14,7 @@ export const datacontext=createContext()
     window.speechSynthesis.speak(text_spek)
   }
   async function aires(promt){
+    document.querySelector('#voice-assistant').style.cssText = 'transform: scale(1); transition: .5s ease-in-out';
     let txt = await run(promt)
     speak(txt)
   }
@@ -24,7 +25,12 @@ export const datacontext=createContext()
     let trans = e.results[currunt][0].transcript
     // alert(trans);
 
-    aires(trans)
+    if(trans == 'open Google'){
+      window.location.href = "www.google.com"
+     }else{
+       aires(trans)
+     }
+  
   }
 
   let value = {
